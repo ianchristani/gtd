@@ -1,0 +1,15 @@
+{% extends 'general_template.html' %}
+
+{% block products %}
+
+<ul>
+    {% for product in products %}
+    <a href="{% url 'crud:update_product' product.id %}">
+        <li>{{ product.name }}</li>
+    </a>
+    {% endfor %}
+</ul>
+
+<a href="{% url 'crud:create_product' %}">Incluir produto</a>
+
+{% endblock %}

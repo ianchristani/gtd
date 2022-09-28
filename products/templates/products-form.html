@@ -1,0 +1,16 @@
+{% extends 'general_template.html' %}
+
+{% block products-form %}
+
+    <h2>Inclusao e Edicao de produtos</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ product_form }}
+        <button type="submit">Enviar</button>
+    </form>
+
+    {% if id %}
+        <a href="{% url 'crud:delete_product' id.id %}"></a>
+    {% endif%}
+
+{% endblock %}
