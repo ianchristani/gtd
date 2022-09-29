@@ -6,8 +6,8 @@
         <h1>Bem vindo ao site GTD</h1>
     </div>    
     <div class="container m-4">
-        <p>Ja e cadastrado, logue-se</p>
-        <p>Caso nao seja cadastrado, registre-se</p>
+        <p>Ja e cadastrado, <a href="{% url 'usersapp:login' %}">logue-se</a></p>
+        <p>Caso nao seja cadastrado, <a href="{% url 'usersapp:signup' %}">registre-se</a></p>
     </div>
 
 {% endblock %}

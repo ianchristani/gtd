@@ -1,0 +1,16 @@
+{% extends 'general_template.html' %}
+
+{% block signup %}
+    <div class="container m-4">
+        <div class="container">
+            <p><strong>Registre-se</strong> agora:</p>
+            <form class="site-form" action="{% url 'usersapp:signup' %}" method="post">
+                {% csrf_token %}
+                {{ signupform.as_p }}
+                <button type="submit" class="btn btn-info">Enviar</button>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+
