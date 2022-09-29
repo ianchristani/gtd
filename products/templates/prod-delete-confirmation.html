@@ -1,10 +1,12 @@
 {% extends 'general_template.html' %}
 
-{% block prod-delete-confirmation %}
-
-    <form method="post">
-        <h2>Confirma a exclusao do {{ product_to_delete.name }}?</h2>
-        <button type="submit">Sim</button>
-    </form>
-
-{% endblock %}
+<div class="container">
+    {% block prod-delete-confirmation %}
+        <div class="container m-4">
+            <form method="post">
+                <h3>Confirma a exclusao do <strong>{{ product_to_delete.name }}</strong>?</h3>
+                <button type="submit" class="btn btn-danger">Sim</button>
+            </form>
+        </div>       
+    {% endblock %}
+</div>

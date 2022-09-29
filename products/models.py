@@ -6,6 +6,5 @@ class products_model(models.Model):
     price = models.DecimalField(max_digits=9, decimal_places=2)
     amount = models.IntegerField()
 
-
     def __str__(self):
         return self.name

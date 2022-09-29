@@ -15,7 +15,7 @@ def create_product(request):
 
     if form_instance.is_valid():
         form_instance.save()
-        return redirect('list_products')
+        return redirect('crud:list_products')
 
     return render(request, 'products-form.html', {'product_form':form_instance})
 
@@ -25,7 +25,7 @@ def update_product(request, id):
 
     if form_instance.is_valid():
         form_instance.save()
-        return redirect('list_products')
+        return redirect('crud:list_products')
 
     return render(request, 'products-form.html', {'product_form':form_instance, 'id':selected_product})
 
@@ -34,7 +34,7 @@ def delete_product(request, id):
     
     if request.method == 'POST':
         selected_product.delete()
-        return redirect('list_products')
+        return redirect('crud:list_products')
 
     return render(request, 'prod-delete-confirmation.html', {'product_to_delete':selected_product})
 

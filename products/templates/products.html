@@ -1,15 +1,24 @@
 {% extends 'general_template.html' %}
 
-{% block products %}
+<div class="container">
+    {% block products %}
+    <div class="container m-4">
+        <p>Os seguintes produtos estao cadastrados no DB:</p>
+    </div>
 
-<ul>
-    {% for product in products %}
-    <a href="{% url 'crud:update_product' product.id %}">
-        <li>{{ product.name }}</li>
-    </a>
-    {% endfor %}
-</ul>
+    <div class="container">
+        <ul>
+            {% for product in products %}
+            <a href="{% url 'crud:update_product' product.id %}">
+                <li>{{ product.name }}</li>
+            </a>
+            {% endfor %}
+        </ul>
+    </div>
+    <container class="m-4">
+        <a href="{% url 'crud:create_product' %}">Incluir produto</a>
+    </container>   
 
-<a href="{% url 'crud:create_product' %}">Incluir produto</a>
+    {% endblock %}
+</div>
 
-{% endblock %}

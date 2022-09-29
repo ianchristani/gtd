@@ -1,16 +1,21 @@
 {% extends 'general_template.html' %}
 
-{% block products-form %}
-
-    <h2>Inclusao e Edicao de produtos</h2>
-    <form method="post">
-        {% csrf_token %}
-        {{ product_form }}
-        <button type="submit">Enviar</button>
-    </form>
-
-    {% if id %}
-        <a href="{% url 'crud:delete_product' id.id %}"></a>
-    {% endif%}
-
-{% endblock %}
+<div class="container">
+    {% block products-form %}
+        <div class="container m-4">
+            <h3>Inclusao e Edicao de produtos</h3>
+        </div>
+        <div class="container m-4">
+            <form method="post">
+                {% csrf_token %}
+                {{ product_form.as_p }}
+                <button class="btn btn-primary mt-4" type="submit">Enviar</button>
+            </form>
+        </div>
+        <div class="container">
+            {% if id %}
+            <span>Deseja deletar o produto</span><a href="{% url 'crud:delete_product' id.id %}"> deletar </a><span>{{ id.name }}?</span>
+        {% endif%}
+        </div>     
+    {% endblock %}  
+</div>
