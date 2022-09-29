@@ -1,9 +1,10 @@
-{% extends 'general_template.html' %}
+{% extends 'general_users_template.html' %}
 
-<div class="container">
-    {% block products %}
+
+{% block products %}
     <div class="container m-4">
         <p>Os seguintes produtos estao cadastrados no DB:</p>
+        <p>Para mais detalhes, clique neles.</p>
     </div>
 
     <div class="container">
@@ -15,10 +16,7 @@
             {% endfor %}
         </ul>
     </div>
-    <container class="m-4">
-        <a href="{% url 'crud:create_product' %}">Incluir produto</a>
-    </container>   
 
-    {% endblock %}
-</div>
+{% endblock %}
+
 
