@@ -1,12 +1,14 @@
-{% extends 'general_template.html' %}
+{% extends 'general_users_template.html' %}
 
-<div class="container">
-    {% block prod-delete-confirmation %}
-        <div class="container m-4">
-            <form method="post">
-                <h3>Confirma a exclusao do <strong>{{ product_to_delete.name }}</strong>?</h3>
-                <button type="submit" class="btn btn-danger">Sim</button>
-            </form>
-        </div>       
-    {% endblock %}
-</div>
+
+{% block prod-delete-confirmation %}
+    <div class="container m-4">
+        <form method="post">
+            {% csrf_token %}
+            <h3>Confirma a exclusao do <strong>{{ product_to_delete.name }}</strong>?</h3>
+            <button type="submit" class="btn btn-danger">Sim</button>
+        </form>
+        <a  href="{% url 'crud:list_products' %}"><button class="btn btn-success">Nao</button></a>           
+    </div>       
+{% endblock %}
+
