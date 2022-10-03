@@ -8,10 +8,10 @@
     </div>
 
     <div class="container">
-        <ul>
-            {% for product in products %}
+        <ul class="list-inline">
+            {% for product in products %}            
             <a href="{% url 'crud:update_product' product.id %}">
-                <li>{{ product.name }}</li>
+                <li>{{ product.name }} <img src="{{ product.pic.url }}"></li>
             </a>
             {% endfor %}
         </ul>
