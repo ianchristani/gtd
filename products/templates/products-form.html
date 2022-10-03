@@ -6,7 +6,7 @@
         <h3>Inclusao e Edicao de produtos</h3>
     </div>
     <div class="container m-4">
-        <form method="post">
+        <form method="post" enctype="multipart/form-data">
             {% csrf_token %}
             {{ product_form.as_p }}
             <button class="btn btn-primary mt-4" type="submit">Enviar</button>
@@ -14,8 +14,8 @@
     </div>
     <div class="container">
         {% if id %}
-        <span>Deseja deletar o produto </span><a href="{% url 'crud:delete_product' id.id %}">deletar</a><span><strong> {{ id.name }}</strong>?</span>
-    {% endif%}
+            <span>Deseja deletar o produto </span><a href="{% url 'crud:delete_product' id.id %}">deletar</a><span><strong> {{ id.name }}</strong>?</span>
+        {% endif%}
     </div>     
 {% endblock %}  
 
